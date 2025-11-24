@@ -55,8 +55,8 @@ const Footer = () => {
                 <Image 
                   src="/logo.png" 
                   alt="Neoura Logo" 
-                  width={32}
-                  height={32}
+                  width={36}
+                  height={36}
                   className="object-contain brightness-0 invert"
                 />
               </div>
