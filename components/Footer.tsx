@@ -1,6 +1,7 @@
 'use client'
 
 import { Facebook, Twitter, Linkedin, Instagram, Github, Mail, Phone, MapPin, ArrowUp } from 'lucide-react'
+import Image from 'next/image'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -50,11 +51,13 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <a href="#home" className="flex items-center space-x-3 mb-6 group">
-              <div className="w-12 h-12 transform group-hover:scale-110 transition-transform">
-                <img 
+              <div className="relative w-12 h-12 transform group-hover:scale-110 transition-transform">
+                <Image 
                   src="/logo.png" 
                   alt="Neoura Logo" 
-                  className="w-full h-full object-contain"
+                  width={48}
+                  height={48}
+                  className="object-contain logo-gradient"
                 />
               </div>
               <span className="text-3xl font-bold gradient-text">Neoura</span>

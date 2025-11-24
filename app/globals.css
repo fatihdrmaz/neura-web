@@ -33,6 +33,22 @@
   .shadow-glow {
     box-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
   }
+  
+  .logo-gradient {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(99%) saturate(2361%) hue-rotate(188deg) brightness(98%) contrast(95%);
+  }
+  
+  .logo-gradient-bg {
+    background: linear-gradient(135deg, #0ea5e9 0%, #a855f7 100%);
+    -webkit-mask-image: url('/logo.png');
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url('/logo.png');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
 }
 
 /* Smooth scrolling for sections */

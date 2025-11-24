@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -44,11 +45,14 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 transform group-hover:scale-110 transition-transform">
-              <img 
+            <div className="relative w-10 h-10 transform group-hover:scale-110 transition-transform">
+              <Image 
                 src="/logo.png" 
                 alt="Neoura Logo" 
-                className="w-full h-full object-contain"
+                width={40}
+                height={40}
+                className="object-contain logo-gradient"
+                priority
               />
             </div>
             <span className="text-2xl font-bold gradient-text">Neoura</span>

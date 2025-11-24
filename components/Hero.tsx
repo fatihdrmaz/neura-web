@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowRight, Code, Smartphone, Globe } from 'lucide-react'
+import Image from 'next/image'
 
 const Hero = () => {
   return (
@@ -70,8 +71,14 @@ const Hero = () => {
           {/* Right Content - Floating Cards */}
           <div className="relative h-[500px] hidden lg:block">
             <div className="absolute top-0 right-0 w-72 h-80 glass-effect rounded-2xl p-6 shadow-xl animate-float">
-              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-md">
-                <img src="/logo.png" alt="Neoura" className="w-8 h-8 object-contain" />
+              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mb-4 shadow-md p-2">
+                <Image 
+                  src="/logo.png" 
+                  alt="Neoura" 
+                  width={32} 
+                  height={32} 
+                  className="object-contain brightness-0 invert"
+                />
               </div>
               <h3 className="text-xl font-bold mb-2">Web Geliştirme</h3>
               <p className="text-gray-600">Modern ve ölçeklenebilir web uygulamaları</p>
