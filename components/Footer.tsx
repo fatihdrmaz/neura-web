@@ -51,13 +51,13 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <a href="#home" className="flex items-center space-x-3 mb-6 group">
-              <div className="relative w-12 h-12 transform group-hover:scale-110 transition-transform">
+              <div className="relative w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-primary-500/50 transition-all duration-300">
                 <Image 
                   src="/logo.png" 
                   alt="Neoura Logo" 
-                  width={48}
-                  height={48}
-                  className="object-contain logo-gradient"
+                  width={32}
+                  height={32}
+                  className="object-contain brightness-0 invert"
                 />
               </div>
               <span className="text-3xl font-bold gradient-text">Neoura</span>

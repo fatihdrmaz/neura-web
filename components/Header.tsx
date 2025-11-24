@@ -45,13 +45,13 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-3 group">
-            <div className="relative w-10 h-10 transform group-hover:scale-110 transition-transform">
+            <div className="relative w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center shadow-md transform group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary-500/50 transition-all duration-300">
               <Image 
                 src="/logo.png" 
                 alt="Neoura Logo" 
-                width={40}
-                height={40}
-                className="object-contain logo-gradient"
+                width={28}
+                height={28}
+                className="object-contain brightness-0 invert"
                 priority
               />
             </div>
