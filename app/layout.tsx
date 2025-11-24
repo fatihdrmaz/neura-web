@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: 'Neoura - Kurumsal Yazılım Çözümleri',
   description: 'Tüm yazılım dillerinde uzman ekibimizle, ihtiyaçlarınıza özel web, mobil ve entegrasyon çözümleri sunuyoruz.',
   keywords: 'kurumsal yazılım, web geliştirme, mobil uygulama, yazılım danışmanlığı',
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 }
 
 export default function RootLayout({

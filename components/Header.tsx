@@ -43,9 +43,13 @@ const Header = () => {
       <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform">
-              <span className="text-white font-bold text-xl">N</span>
+          <a href="#home" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 transform group-hover:scale-110 transition-transform">
+              <img 
+                src="/logo.png" 
+                alt="Neoura Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-2xl font-bold gradient-text">Neoura</span>
           </a>

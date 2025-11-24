@@ -49,9 +49,13 @@ const Footer = () => {
         <div className="py-16 grid md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <a href="#home" className="flex items-center space-x-2 mb-6 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform">
-                <span className="text-white font-bold text-2xl">N</span>
+            <a href="#home" className="flex items-center space-x-3 mb-6 group">
+              <div className="w-12 h-12 transform group-hover:scale-110 transition-transform">
+                <img 
+                  src="/logo.png" 
+                  alt="Neoura Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="text-3xl font-bold gradient-text">Neoura</span>
             </a>

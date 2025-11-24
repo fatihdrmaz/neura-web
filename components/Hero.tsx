@@ -70,8 +70,8 @@ const Hero = () => {
           {/* Right Content - Floating Cards */}
           <div className="relative h-[500px] hidden lg:block">
             <div className="absolute top-0 right-0 w-72 h-80 glass-effect rounded-2xl p-6 shadow-xl animate-float">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-4">
-                <Code className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-4 shadow-md">
+                <img src="/logo.png" alt="Neoura" className="w-8 h-8 object-contain" />
               </div>
               <h3 className="text-xl font-bold mb-2">Web Geliştirme</h3>
               <p className="text-gray-600">Modern ve ölçeklenebilir web uygulamaları</p>
