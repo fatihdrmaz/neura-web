@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, Code, Smartphone, Globe } from 'lucide-react'
+import { ArrowRight, Code, Smartphone, Globe, Zap, Star, Heart, TrendingUp } from 'lucide-react'
 import Image from 'next/image'
 
 const Hero = () => {
@@ -97,12 +97,24 @@ const Hero = () => {
                 <Smartphone className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-2">Mobil Uygulama</h3>
-              <p className="text-gray-600">iOS ve Android için native çözümler</p>
-              <div className="mt-4 grid grid-cols-2 gap-2">
-                <div className="h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg"></div>
-                <div className="h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg"></div>
-                <div className="h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg"></div>
-                <div className="h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg"></div>
+              <p className="text-gray-600 mb-4">iOS ve Android için native çözümler</p>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="h-16 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
+                  <Smartphone className="w-6 h-6 text-white mb-1" />
+                  <span className="text-white text-xs font-semibold">iOS</span>
+                </div>
+                <div className="h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-lg flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
+                  <Zap className="w-6 h-6 text-white mb-1" />
+                  <span className="text-white text-xs font-semibold">Fast</span>
+                </div>
+                <div className="h-16 bg-gradient-to-br from-purple-400 to-purple-500 rounded-lg flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
+                  <Star className="w-6 h-6 text-white mb-1" />
+                  <span className="text-white text-xs font-semibold">Quality</span>
+                </div>
+                <div className="h-16 bg-gradient-to-br from-pink-400 to-pink-500 rounded-lg flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
+                  <TrendingUp className="w-6 h-6 text-white mb-1" />
+                  <span className="text-white text-xs font-semibold">Scale</span>
+                </div>
               </div>
             </div>
 
