@@ -81,32 +81,28 @@ const About = () => {
           {/* Right - Image/Visual */}
           <div className="relative animate-slide-in-right">
             <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="h-48 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl p-6 flex items-center justify-center transform hover:scale-105 transition-transform">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold gradient-text mb-2">100+</div>
-                    <div className="text-gray-700 font-medium">Proje</div>
-                  </div>
-                </div>
-                <div className="h-64 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-2xl p-6 flex items-center justify-center transform hover:scale-105 transition-transform">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold gradient-text mb-2">10+</div>
-                    <div className="text-gray-700 font-medium">Yıl Tecrübe</div>
-                  </div>
+              <div className="h-56 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl p-6 flex items-center justify-center transform hover:scale-105 transition-transform">
+                <div className="text-center">
+                  <div className="text-4xl font-bold gradient-text mb-2">100+</div>
+                  <div className="text-gray-700 font-medium">Proje</div>
                 </div>
               </div>
-              <div className="space-y-4 pt-12">
-                <div className="h-64 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl p-6 flex items-center justify-center transform hover:scale-105 transition-transform">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold gradient-text mb-2">50+</div>
-                    <div className="text-gray-700 font-medium">Müşteri</div>
-                  </div>
+              <div className="h-56 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl p-6 flex items-center justify-center transform hover:scale-105 transition-transform">
+                <div className="text-center">
+                  <div className="text-4xl font-bold gradient-text mb-2">50+</div>
+                  <div className="text-gray-700 font-medium">Müşteri</div>
                 </div>
-                <div className="h-48 bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-6 flex items-center justify-center transform hover:scale-105 transition-transform">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold gradient-text mb-2">7/24</div>
-                    <div className="text-gray-700 font-medium">Destek</div>
-                  </div>
+              </div>
+              <div className="h-56 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-2xl p-6 flex items-center justify-center transform hover:scale-105 transition-transform">
+                <div className="text-center">
+                  <div className="text-4xl font-bold gradient-text mb-2">10+</div>
+                  <div className="text-gray-700 font-medium">Yıl Tecrübe</div>
+                </div>
+              </div>
+              <div className="h-56 bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-6 flex items-center justify-center transform hover:scale-105 transition-transform">
+                <div className="text-center">
+                  <div className="text-4xl font-bold gradient-text mb-2">7/24</div>
+                  <div className="text-gray-700 font-medium">Destek</div>
                 </div>
               </div>
             </div>
