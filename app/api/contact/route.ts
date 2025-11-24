@@ -40,7 +40,7 @@ export async function POST(request: Request) {
     try {
       const { data, error } = await resend.emails.send({
         from: 'Neoura İletişim <onboarding@resend.dev>',
-        to: ['info@neoura.com'],
+        to: ['fdurmaz@gmail.com'],
         subject: `Yeni İletişim Mesajı: ${subject}`,
         html: `
           <!DOCTYPE html>
