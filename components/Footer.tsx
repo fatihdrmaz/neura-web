@@ -76,11 +76,11 @@ const Footer = () => {
                 </div>
                 <span>+90 532 136 69 36</span>
               </a>
-              <a href="mailto:[email protected]" className="flex items-center space-x-3 text-gray-400 hover:text-primary-400 transition-colors group">
+              <a href="mailto:info@neoura.com" className="flex items-center space-x-3 text-gray-400 hover:text-primary-400 transition-colors group">
                 <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors">
                   <Mail className="w-5 h-5" />
                 </div>
-                <span>[email protected]</span>
+                <span>info@neoura.com</span>
               </a>
               <div className="flex items-center space-x-3 text-gray-400">
                 <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center">

@@ -55,8 +55,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      content: '[email protected]',
-      link: 'mailto:[email protected]',
+      content: 'info@neoura.com',
+      link: 'mailto:info@neoura.com',
       color: 'from-purple-500 to-purple-600',
     },
   ]
