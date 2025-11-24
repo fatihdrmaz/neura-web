@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 export async function POST(request: Request) {
   try {
@@ -36,9 +36,10 @@ export async function POST(request: Request) {
     console.log('🕐 Tarih:', new Date().toLocaleString('tr-TR'))
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 
-    // Resend ile email gönder
-    try {
-      const { data, error } = await resend.emails.send({
+    // Resend ile email gönder (eğer API key varsa)
+    if (resend) {
+      try {
+        const { data, error } = await resend.emails.send({
         from: 'Neoura İletişim <onboarding@resend.dev>',
         to: ['fdurmaz@gmail.com'],
         subject: `Yeni İletişim Mesajı: ${subject}`,
@@ -113,12 +114,15 @@ export async function POST(request: Request) {
       if (error) {
         console.error('❌ Resend email gönderme hatası:', error)
         // Email gönderilemese bile başarılı yanıt dön (kullanıcı deneyimi için)
-      } else {
-        console.log('✅ Email başarıyla gönderildi! ID:', data?.id)
+        } else {
+          console.log('✅ Email başarıyla gönderildi! ID:', data?.id)
+        }
+      } catch (emailError) {
+        console.error('❌ Email servis hatası:', emailError)
+        // Email hatası olsa bile formu başarılı say
       }
-    } catch (emailError) {
-      console.error('❌ Email servis hatası:', emailError)
-      // Email hatası olsa bile formu başarılı say
+    } else {
+      console.log('⚠️ Resend API key bulunamadı, email gönderilemedi.')
     }
 
     // Başarılı yanıt
