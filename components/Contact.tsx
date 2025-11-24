@@ -25,17 +25,35 @@ const Contact = () => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simüle edilmiş form gönderimi
-    setTimeout(() => {
+    try {
+      // API'ye form verilerini gönder
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+        
+        // 5 saniye sonra başarı mesajını gizle
+        setTimeout(() => {
+          setIsSubmitted(false)
+        }, 5000)
+      } else {
+        alert(data.error || 'Bir hata oluştu. Lütfen tekrar deneyin.')
+      }
+    } catch (error) {
+      console.error('Form gönderim hatası:', error)
+      alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.')
+    } finally {
       setIsSubmitting(false)
-      setIsSubmitted(true)
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
-      
-      // 3 saniye sonra başarı mesajını gizle
-      setTimeout(() => {
-        setIsSubmitted(false)
-      }, 3000)
-    }, 1500)
+    }
   }
 
   const contactInfo = [
