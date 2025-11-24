@@ -64,13 +64,6 @@ const Contact = () => {
       color: 'from-blue-500 to-blue-600',
     },
     {
-      icon: Phone,
-      title: 'Telefon',
-      content: '+90 532 136 69 36',
-      link: 'tel:+905321366936',
-      color: 'from-green-500 to-green-600',
-    },
-    {
       icon: Mail,
       title: 'Email',
       content: 'info@neoura.com',
