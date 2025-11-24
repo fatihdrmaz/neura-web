@@ -28,7 +28,7 @@ const Hero = () => {
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Kurumsal Yazılımda
-              <span className="gradient-text block mt-2">Güvenilir Ortağınız</span>
+              <span className="gradient-text block mt-2 pb-2">Güvenilir Ortağınız</span>
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
@@ -118,13 +118,13 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="absolute bottom-0 right-16 w-56 h-56 glass-effect rounded-2xl p-6 shadow-xl animate-float" style={{ animationDelay: '2s' }}>
+            <div className="absolute bottom-0 right-16 w-56 glass-effect rounded-2xl p-6 pb-8 shadow-xl animate-float" style={{ animationDelay: '2s' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-xl flex items-center justify-center mb-4">
                 <Globe className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-2">Entegrasyon</h3>
-              <p className="text-gray-600">API ve sistem entegrasyonları</p>
-              <div className="mt-4 flex items-center justify-center space-x-2">
+              <p className="text-gray-600 text-sm mb-6">API ve sistem entegrasyonları</p>
+              <div className="flex items-center justify-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-primary-500"></div>
                 <div className="w-1 h-1 rounded-full bg-gray-400"></div>
                 <div className="w-1 h-1 rounded-full bg-gray-400"></div>
