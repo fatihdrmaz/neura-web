@@ -92,27 +92,27 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="absolute top-32 left-0 w-64 h-72 glass-effect rounded-2xl p-6 shadow-xl animate-float" style={{ animationDelay: '1s' }}>
-              <div className="w-12 h-12 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center mb-4">
+            <div className="absolute top-32 left-0 w-64 glass-effect rounded-2xl p-6 shadow-xl animate-float" style={{ animationDelay: '1s' }}>
+              <div className="w-12 h-12 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center mb-3">
                 <Smartphone className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-2">Mobil Uygulama</h3>
-              <p className="text-gray-600 mb-4">iOS ve Android için native çözümler</p>
+              <p className="text-gray-600 text-sm mb-3">iOS ve Android için native çözümler</p>
               <div className="grid grid-cols-2 gap-2">
-                <div className="h-16 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
-                  <Smartphone className="w-6 h-6 text-white mb-1" />
+                <div className="h-14 bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
+                  <Smartphone className="w-5 h-5 text-white mb-0.5" />
                   <span className="text-white text-xs font-semibold">iOS</span>
                 </div>
-                <div className="h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-lg flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
-                  <Zap className="w-6 h-6 text-white mb-1" />
+                <div className="h-14 bg-gradient-to-br from-green-400 to-green-500 rounded-lg flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
+                  <Zap className="w-5 h-5 text-white mb-0.5" />
                   <span className="text-white text-xs font-semibold">Fast</span>
                 </div>
-                <div className="h-16 bg-gradient-to-br from-purple-400 to-purple-500 rounded-lg flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
-                  <Star className="w-6 h-6 text-white mb-1" />
+                <div className="h-14 bg-gradient-to-br from-purple-400 to-purple-500 rounded-lg flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
+                  <Star className="w-5 h-5 text-white mb-0.5" />
                   <span className="text-white text-xs font-semibold">Quality</span>
                 </div>
-                <div className="h-16 bg-gradient-to-br from-pink-400 to-pink-500 rounded-lg flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
-                  <TrendingUp className="w-6 h-6 text-white mb-1" />
+                <div className="h-14 bg-gradient-to-br from-pink-400 to-pink-500 rounded-lg flex flex-col items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer">
+                  <TrendingUp className="w-5 h-5 text-white mb-0.5" />
                   <span className="text-white text-xs font-semibold">Scale</span>
                 </div>
               </div>
