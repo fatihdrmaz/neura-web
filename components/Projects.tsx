@@ -22,8 +22,7 @@ const Projects = () => {
       tech: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe'],
       icon: ShoppingCart,
       color: 'from-blue-500 to-blue-600',
-      bgColor: 'bg-blue-50',
-      image: '🛒'
+      bgColor: 'bg-blue-50'
     },
     {
       id: 2,
@@ -33,8 +32,7 @@ const Projects = () => {
       tech: ['React', 'Java', 'Oracle', 'Microservices'],
       icon: Building2,
       color: 'from-purple-500 to-purple-600',
-      bgColor: 'bg-purple-50',
-      image: '🏢'
+      bgColor: 'bg-purple-50'
     },
     {
       id: 3,
@@ -44,8 +42,7 @@ const Projects = () => {
       tech: ['React Native', 'Firebase', 'Node.js', 'MongoDB'],
       icon: Heart,
       color: 'from-red-500 to-red-600',
-      bgColor: 'bg-red-50',
-      image: '❤️'
+      bgColor: 'bg-red-50'
     },
     {
       id: 4,
@@ -55,8 +52,7 @@ const Projects = () => {
       tech: ['Vue.js', 'Python', 'Django', 'Redis'],
       icon: TrendingUp,
       color: 'from-green-500 to-green-600',
-      bgColor: 'bg-green-50',
-      image: '📈'
+      bgColor: 'bg-green-50'
     },
     {
       id: 5,
@@ -66,8 +62,7 @@ const Projects = () => {
       tech: ['Angular', '.NET', 'SQL Server', 'Azure'],
       icon: Building2,
       color: 'from-indigo-500 to-indigo-600',
-      bgColor: 'bg-indigo-50',
-      image: '💼'
+      bgColor: 'bg-indigo-50'
     },
     {
       id: 6,
@@ -77,8 +72,7 @@ const Projects = () => {
       tech: ['React', 'GraphQL', 'Node.js', 'MongoDB'],
       icon: TrendingUp,
       color: 'from-pink-500 to-pink-600',
-      bgColor: 'bg-pink-50',
-      image: '📱'
+      bgColor: 'bg-pink-50'
     },
   ]
 
@@ -130,13 +124,10 @@ const Projects = () => {
                 {/* Background Pattern */}
                 <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${project.color} opacity-5 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500`}></div>
                 
-                {/* Top Section with Icon/Image */}
-                <div className={`${project.bgColor} p-8 relative`}>
-                  <div className="text-6xl mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                    {project.image}
-                  </div>
-                  <div className={`absolute top-4 right-4 w-12 h-12 bg-gradient-to-br ${project.color} rounded-xl flex items-center justify-center opacity-80`}>
-                    <Icon className="w-6 h-6 text-white" />
+                {/* Top Section with Icon */}
+                <div className={`${project.bgColor} p-8 relative flex items-center justify-center`}>
+                  <div className={`w-20 h-20 bg-gradient-to-br ${project.color} rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                    <Icon className="w-10 h-10 text-white" />
                   </div>
                 </div>
 
