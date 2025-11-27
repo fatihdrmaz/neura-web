@@ -3,8 +3,42 @@ import { Resend } from 'resend'
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
+// Basit rate limiting (memory-based)
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>()
+
+function rateLimit(ip: string): boolean {
+  const now = Date.now()
+  const limit = 3 // 10 dakikada maksimum 3 mesaj
+  const window = 10 * 60 * 1000 // 10 dakika
+
+  const record = rateLimitMap.get(ip)
+  
+  if (!record || now > record.resetTime) {
+    rateLimitMap.set(ip, { count: 1, resetTime: now + window })
+    return true
+  }
+  
+  if (record.count >= limit) {
+    return false
+  }
+  
+  record.count++
+  return true
+}
+
 export async function POST(request: Request) {
   try {
+    // IP bazlı rate limiting
+    const forwarded = request.headers.get('x-forwarded-for')
+    const ip = forwarded ? forwarded.split(',')[0] : 'unknown'
+    
+    if (!rateLimit(ip)) {
+      return NextResponse.json(
+        { error: 'Çok fazla istek gönderdiniz. Lütfen 10 dakika sonra tekrar deneyin.' },
+        { status: 429 }
+      )
+    }
+
     const body = await request.json()
     const { name, email, phone, subject, message } = body
 
@@ -21,6 +55,25 @@ export async function POST(request: Request) {
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: 'Geçerli bir email adresi girin.' },
+        { status: 400 }
+      )
+    }
+
+    // Mesaj uzunluğu kontrolü
+    if (message.length < 10 || message.length > 5000) {
+      return NextResponse.json(
+        { error: 'Mesaj 10-5000 karakter arasında olmalıdır.' },
+        { status: 400 }
+      )
+    }
+
+    // Spam kelimeleri kontrolü
+    const spamWords = ['viagra', 'casino', 'lottery', 'prize', 'winner']
+    const lowerMessage = message.toLowerCase()
+    if (spamWords.some(word => lowerMessage.includes(word))) {
+      console.log('🚫 Spam keyword detected')
+      return NextResponse.json(
+        { error: 'Mesajınız spam içerik içeriyor.' },
         { status: 400 }
       )
     }

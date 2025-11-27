@@ -10,9 +10,11 @@ const Contact = () => {
     phone: '',
     subject: '',
     message: '',
+    honeypot: '', // Bot tuzağı
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [formStartTime, setFormStartTime] = useState<number>(Date.now())
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -26,20 +28,46 @@ const Contact = () => {
     setIsSubmitting(true)
     
     try {
+      // Spam Kontrolü 1: Honeypot (gizli alan bot tuzağı)
+      if (formData.honeypot) {
+        console.log('🤖 Bot detected via honeypot')
+        setIsSubmitting(false)
+        return
+      }
+
+      // Spam Kontrolü 2: Form çok hızlı gönderildi mi? (minimum 3 saniye)
+      const timeSpent = (Date.now() - formStartTime) / 1000
+      if (timeSpent < 3) {
+        alert('Lütfen formu daha dikkatli doldurun.')
+        setIsSubmitting(false)
+        return
+      }
+
+      // Spam Kontrolü 3: Mesaj uzunluğu kontrolü
+      if (formData.message.length < 10) {
+        alert('Lütfen daha detaylı bir mesaj yazın (en az 10 karakter).')
+        setIsSubmitting(false)
+        return
+      }
+
+      // Honeypot alanını gönderme
+      const { honeypot, ...dataToSend } = formData
+
       // API'ye form verilerini gönder
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(dataToSend),
       })
 
       const data = await response.json()
 
       if (response.ok) {
         setIsSubmitted(true)
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '', honeypot: '' })
+        setFormStartTime(Date.now()) // Zamanlayıcıyı sıfırla
         
         // 5 saniye sonra başarı mesajını gizle
         setTimeout(() => {
@@ -149,6 +177,18 @@ const Contact = () => {
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot - Bot tuzağı (görünmez) */}
+                <div className="hidden" aria-hidden="true">
+                  <input
+                    type="text"
+                    name="honeypot"
+                    value={formData.honeypot}
+                    onChange={handleChange}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                     Ad Soyad *
